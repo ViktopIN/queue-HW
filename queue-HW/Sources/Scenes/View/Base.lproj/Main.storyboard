@@ -75,6 +75,12 @@
                             <constraint firstItem="bS1-dg-K0c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rFt-jo-8LI"/>
                             <constraint firstItem="X6m-YN-biP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xLP-6B-FFO"/>
                         </constraints>
+                        <connections>
+                            <outlet property="colorButton" destination="X6m-YN-biP" id="gq9-oH-jNj"/>
+                            <outlet property="label" destination="DIB-8F-n39" id="PMa-S3-ekD"/>
+                            <outlet property="passwordButton" destination="bS1-dg-K0c" id="OT7-pI-oNA"/>
+                            <outlet property="textField" destination="CJW-gS-8r8" id="5S5-3K-9bP"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
