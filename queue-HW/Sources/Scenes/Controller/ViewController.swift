@@ -57,9 +57,9 @@ class ViewController: UIViewController {
         label?.textAlignment = .center
         label?.text = "Password is ..."
         
-        colorButton?.titleLabel?.text = "Change color"
+        colorButton?.setTitle("Change color", for: .normal)
         
-        passwordButton?.titleLabel?.text = "Selection password"
+        passwordButton?.setTitle("Selection password", for: .normal)
     }
 //  MARK: - Lifecycle
     override func viewDidLoad() {
