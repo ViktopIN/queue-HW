@@ -9,25 +9,32 @@ import UIKit
 
 class ViewController: UIViewController {
 //  MARK: - Properties
-    private var mainView: View? {
-        guard isViewLoaded else { return nil }
-        return view as? View
-    }
+    
+    @IBOutlet weak var colorButton: UIButton!
+    @IBOutlet weak var passwordButton: UIButton!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
         
     var isBlack: Bool = false {
         didSet {
             if isBlack {
                 self.view.backgroundColor = .black
+                self.label.textColor = .white
+                self.indicator.color = .white
             } else {
                 self.view.backgroundColor = .white
+                self.label.textColor = .black
+                self.indicator.color = .gray
                 }
         }
     }
 //  MARK: - Methods
+  
     @IBAction func onBut(_ sender: UIButton) {
         isBlack.toggle()
     }
-        
+    
     func bruteForce(passwordToUnlock: String) {
         let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
 
@@ -43,13 +50,22 @@ class ViewController: UIViewController {
             
         print(password)
     }
+    
+    func configure() {
+        textField?.isSecureTextEntry = true
+        
+        label?.textAlignment = .center
+        label?.text = "Password is ..."
+        
+        colorButton?.titleLabel?.text = "Change color"
+        
+        passwordButton?.titleLabel?.text = "Selection password"
+    }
 //  MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        mainView?.textField.isSecureTextEntry = true
-            
-        self.bruteForce(passwordToUnlock: "1!gr")
+        configure()
+//        self.bruteForce(passwordToUnlock: "1!gr")
     }
 }
 

@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="queue_HW" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="View" customModule="queue_HW" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -24,6 +24,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="onBut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lQD-EG-Aib"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIB-8F-n39">
                                 <rect key="frame" x="106" y="64" width="202" height="21"/>
@@ -75,13 +78,14 @@
                             <constraint firstItem="bS1-dg-K0c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rFt-jo-8LI"/>
                             <constraint firstItem="X6m-YN-biP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xLP-6B-FFO"/>
                         </constraints>
-                        <connections>
-                            <outlet property="colorButton" destination="X6m-YN-biP" id="gq9-oH-jNj"/>
-                            <outlet property="label" destination="DIB-8F-n39" id="PMa-S3-ekD"/>
-                            <outlet property="passwordButton" destination="bS1-dg-K0c" id="OT7-pI-oNA"/>
-                            <outlet property="textField" destination="CJW-gS-8r8" id="5S5-3K-9bP"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="colorButton" destination="X6m-YN-biP" id="oTb-uC-8rK"/>
+                        <outlet property="indicator" destination="LzW-vx-Ro1" id="Dub-9u-aVn"/>
+                        <outlet property="label" destination="DIB-8F-n39" id="WgN-00-aCz"/>
+                        <outlet property="passwordButton" destination="bS1-dg-K0c" id="EYW-24-Yy4"/>
+                        <outlet property="textField" destination="CJW-gS-8r8" id="MW8-Mt-E1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

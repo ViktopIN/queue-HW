@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8436A20A289645BC00E0C2C9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436A209289645BC00E0C2C9 /* View.swift */; };
+		8436A20D28964A1D00E0C2C9 /* View Controller extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436A20C28964A1D00E0C2C9 /* View Controller extension.swift */; };
+		8436A20F28964A7500E0C2C9 /* String extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436A20E28964A7500E0C2C9 /* String extension.swift */; };
+		8436A21128964AD100E0C2C9 /* String methods extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436A21028964AD100E0C2C9 /* String methods extension.swift */; };
 		84E9052128951E85004AEA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9052028951E85004AEA1F /* AppDelegate.swift */; };
 		84E9052328951E85004AEA1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9052228951E85004AEA1F /* SceneDelegate.swift */; };
 		84E9052528951E85004AEA1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9052428951E85004AEA1F /* ViewController.swift */; };
@@ -34,7 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8436A209289645BC00E0C2C9 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		8436A20C28964A1D00E0C2C9 /* View Controller extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View Controller extension.swift"; sourceTree = "<group>"; };
+		8436A20E28964A7500E0C2C9 /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extension.swift"; sourceTree = "<group>"; };
+		8436A21028964AD100E0C2C9 /* String methods extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String methods extension.swift"; sourceTree = "<group>"; };
 		84E9051D28951E85004AEA1F /* queue-HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "queue-HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E9052028951E85004AEA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E9052228951E85004AEA1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,8 +107,8 @@
 		8436A205289644F700E0C2C9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8436A213289654CF00E0C2C9 /* Storyboard */,
 				8436A2082896458600E0C2C9 /* Model */,
-				8436A2072896457200E0C2C9 /* View */,
 				8436A2062896455400E0C2C9 /* Controller */,
 			);
 			path = Scenes;
@@ -114,24 +118,26 @@
 			isa = PBXGroup;
 			children = (
 				84E9052428951E85004AEA1F /* ViewController.swift */,
+				8436A20C28964A1D00E0C2C9 /* View Controller extension.swift */,
+				8436A21028964AD100E0C2C9 /* String methods extension.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		8436A2072896457200E0C2C9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				84E9052628951E85004AEA1F /* Main.storyboard */,
-				8436A209289645BC00E0C2C9 /* View.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		8436A2082896458600E0C2C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8436A20E28964A7500E0C2C9 /* String extension.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8436A213289654CF00E0C2C9 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				84E9052628951E85004AEA1F /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		84E9051428951E85004AEA1F = {
@@ -292,10 +298,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8436A20A289645BC00E0C2C9 /* View.swift in Sources */,
 				84E9052528951E85004AEA1F /* ViewController.swift in Sources */,
+				8436A21128964AD100E0C2C9 /* String methods extension.swift in Sources */,
 				84E9052128951E85004AEA1F /* AppDelegate.swift in Sources */,
+				8436A20D28964A1D00E0C2C9 /* View Controller extension.swift in Sources */,
 				84E9052328951E85004AEA1F /* SceneDelegate.swift in Sources */,
+				8436A20F28964A7500E0C2C9 /* String extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
