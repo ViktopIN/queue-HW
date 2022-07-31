@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    let queue = DispatchQueue(label: "myQueue", qos: .userInteractive, attributes: .concurrent)
         
     var isBlack: Bool = false {
         didSet {
@@ -35,24 +37,43 @@ class ViewController: UIViewController {
         isBlack.toggle()
     }
     
+    @IBAction func passwordGenerate(_ sender: UIButton) {
+        let chars = String().printable
+        let random = String((0..<3).compactMap{ _ in chars.randomElement() })
+        textField.text = random
+        
+        queue.async {
+            self.bruteForce(passwordToUnlock: random)
+        }
+    }
+    
     func bruteForce(passwordToUnlock: String) {
+        DispatchQueue.main.async {
+            self.indicator.isHidden = false
+            self.indicator.startAnimating()
+        }
         let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
 
         var password: String = ""
 
-        // Will strangely ends at 0000 instead of ~~~
-        while password != passwordToUnlock { // Increase MAXIMUM_PASSWORD_SIZE value for more
+        while password != passwordToUnlock {
             password = generateBruteForce(password, fromArray: ALLOWED_CHARACTERS)
-//             Your stuff here
-            print(password)
-            // Your stuff here
+        }
+        
+        DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
+            self.label.text = password
+            self.textField.isSecureTextEntry = true
         }
             
         print(password)
     }
     
     func configure() {
-        textField?.isSecureTextEntry = true
+        textField?.isSecureTextEntry = false
+        
+        indicator.isHidden = true
         
         label?.textAlignment = .center
         label?.text = "Password is ..."
@@ -65,7 +86,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-//        self.bruteForce(passwordToUnlock: "1!gr")
     }
 }
 
