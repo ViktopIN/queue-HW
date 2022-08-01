@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     
     func bruteForce(passwordToUnlock: String) {
         DispatchQueue.main.async {
+            self.textField.isSecureTextEntry = true
             self.indicator.isHidden = false
             self.indicator.startAnimating()
         }
@@ -64,15 +65,13 @@ class ViewController: UIViewController {
             self.indicator.stopAnimating()
             self.indicator.isHidden = true
             self.label.text = password
-            self.textField.isSecureTextEntry = true
+            self.textField.isSecureTextEntry = false
         }
             
         print(password)
     }
     
-    func configure() {
-        textField?.isSecureTextEntry = false
-        
+    func configure() {        
         indicator.isHidden = true
         
         label?.textAlignment = .center
